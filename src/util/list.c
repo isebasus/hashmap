@@ -29,7 +29,7 @@ list_t *create_list(void) {
     l->head->next = l->tail;
     l->tail->prev = l->head;
     l->index = -1;
-    l->elements = 0;
+    l->curr = NULL;
     return l;
 }
 
@@ -60,21 +60,21 @@ void append(list_t *list, void *x) {
     list->tail->prev->next = n;
     list->tail->prev = n;
     list->curr = n;
-    list->elements++;
 }
 
 void move_front(list_t *list) {
-    if (!list || list->elements == 0)
+    if (!list)
         return;
     list->curr = list->head->next;
-    list->index = list->elements != 0 ? 0 : -1;
+    list->index = list->head->next != list->tail ? 0 : -1;
 }
 
 void move_next(list_t *list) {
-    if (!list)
+    if (!list || list->curr == NULL)
         return;
     if (list->curr->next == list->tail) {
         list->index = -1;
+        list->curr = NULL;
         return;
     }
     list->curr = list->curr->next;
@@ -89,11 +89,10 @@ void clear(list_t *list) {
         delete_listnode(&curr);
     }
     list->index = -1;
-    list->elements = 0;
 }
 
 void *get(list_t *list) {
-    if (!list)
+    if (!list || list->index < 0)
         return NULL;
     return list->curr->data;
 }

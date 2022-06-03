@@ -14,7 +14,7 @@ hashmap_t *create_hashmap(uint32_t size) {
     hashmap_t *h = (hashmap_t *) malloc(sizeof(hashmap_t));
     assert(h);
     h->size = size;
-    h->hasharray = calloc(size, sizeof(int));
+    h->hasharray = calloc(size, sizeof(list_t *));
     return h;
 }
 

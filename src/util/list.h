@@ -15,8 +15,7 @@ struct list_t {
     listnode_t *head;
     listnode_t *tail;
     listnode_t *curr;
-    uint32_t elements;
-    uint32_t index;
+    int index;
 };
 
 typedef struct list_t list_t;
