@@ -25,8 +25,7 @@ node_t *create_node(uint8_t *key, int value) {
 
 void delete_node(node_t **n) {
     if (n && *n) {
-        if ((*n)->key)
-            free((*n)->key);
+        free((*n)->key);
         free(*n);
         *n = NULL;
     }

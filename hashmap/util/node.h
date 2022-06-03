@@ -9,8 +9,6 @@ typedef struct node_t node_t;
 struct node_t {
     uint8_t *key;
     int value;
-    node_t *next;
-    node_t *prev;
 };
 
 node_t *create_node(uint8_t *key, int value);

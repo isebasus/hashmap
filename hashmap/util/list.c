@@ -83,7 +83,7 @@ void move_next(list_t *list) {
 
 void clear(list_t *list) {
     listnode_t *ln = list->head->next;
-    while (ln->next != list->tail) {
+    while (ln != list->tail) {
         listnode_t *curr = ln;
         ln = ln->next;
         delete_listnode(&curr);

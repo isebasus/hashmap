@@ -31,9 +31,13 @@ int test_hashmap_lookup() {
         if ((val = hashmap_lookup(table, key)) != -1) {
             fprintf(stdout, "key: %s, value: %i\n", key, val);
         } else {
+            delete_hashmap(&table);
+            free(key);
             return 1;
         }
+        free(key);
     }
+    delete_hashmap(&table);
     return 0;
 }
 

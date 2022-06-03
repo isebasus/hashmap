@@ -23,7 +23,7 @@ void delete_hashmap(hashmap_t **hm) {
         for (uint32_t i = 0; i < (*hm)->size; i++) {
             if ((*hm)->hasharray[i] != NULL) {
                 list_t *list = (*hm)->hasharray[i];
-                for (move_next(list); get_index(list) >= 0; move_next(list)) {
+                for (move_front(list); get_index(list) >= 0; move_next(list)) {
                     node_t *node = (node_t *) get(list);
                     delete_node(&node);
                 }
