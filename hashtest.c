@@ -1,5 +1,5 @@
-#include "src/hashmap.h"
-#include "src/util/node.h"
+#include "hashmap/hashmap.h"
+#include "hashmap/util/node.h"
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,6 +1,6 @@
 EXECA = hashtest
-UTIL = ./src/util
-SRC = ./src
+UTIL = ./hashmap/util
+SRC = ./hashmap
 
 SOURCEA = $(UTIL)/list.o $(UTIL)/node.o $(SRC)/hashmap.o hashtest.o
 
