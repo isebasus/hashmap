@@ -1,4 +1,4 @@
-# 🗺️ hashmap 
+# 🗞️ hashmap 
 
 A funny, basic hashmap written in C.
 
