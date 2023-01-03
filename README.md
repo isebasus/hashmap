@@ -1,6 +1,6 @@
 # 🗞️ hashmap 
 
-A funny, basic hashmap written in C.
+A silly, basic hashmap written in C.
 
 # Documentation
 
